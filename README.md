@@ -1,6 +1,10 @@
 # livepeer-demo-react-native
 
+[Demo Video](https://www.youtube.com/watch?v=pXaKOF8Zptg)
+
 This is a demo React Native live streaming application built with the [Livepeer.com API](https://livepeer.com/docs/api). It can serve as a starting point for building cross-platform mobile live streaming apps.
+
+
 
 ## Installation
 
