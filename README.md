@@ -9,9 +9,15 @@ This is a demo React Native live streaming application built with the [Livepeer 
 ## Installation
 
 ```sh
+cd GoLive
+
+# Install node dependencies
 yarn
+
+# Install iOS dependencies
 cd ios && pod install && cd ..
 ```
+
 
 ## Development
 
@@ -28,7 +34,13 @@ yarn android
 In order to use the broadcasting functionality, you'll need to run the app on an actual ios device:
 
 ```sh
+# On physical device
 npx react-native run-ios --device DEVICE_NAME
+# On simulator
+npx react-native run-ios
+
+# On Apple Siicon
+arch -x86_64 npx react-native run-ios
 ```
 
 If you just want to run the app in a simulator, everything else should still work as intended with the following command:
