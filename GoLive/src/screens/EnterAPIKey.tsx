@@ -7,7 +7,6 @@ import {PrimaryButton} from '../components/PrimaryButton';
 import {Screen} from '../components/Screen';
 import {API_KEY_LEN, CREATE_API_KEY_HELP_URL} from '../constants';
 import {useAPIKeyStore} from '../hooks/useAPIKeyStore';
-import {fetchAPIToken} from '../api';
 
 export function EnterAPIKey() {
   const navigation = useNavigation();
@@ -20,9 +19,7 @@ export function EnterAPIKey() {
     try {
       setIsSubmitting(true);
       console.log(value);
-      const token = await fetchAPIToken({id: value}); // fetch token to ensure validity
-      console.log(token);
-      apiKeyStore.save(token.id);
+      apiKeyStore.save(value);
       navigation.navigate('broadcast_stream');
     } catch (err) {
       console.log('ERROR MESSAGE', err.message);

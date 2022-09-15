@@ -80,7 +80,7 @@ export function BroadcastStream() {
       <Div style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <BroadcastCameraView
           ref={cameraViewRef}
-          ingestURL={`rtmp://rtmp.livepeer.com/live/${streamKey}`}
+          ingestURL={`rtmp://rtmp.livepeer.studio/live/${streamKey}`}
         />
 
         <CloseButton color="white" onBeforeClose={onStopStreaming} />
@@ -153,11 +153,11 @@ export function BroadcastStream() {
               />
               <CopyInput
                 label="RTMP Ingest URL"
-                value="rtmp://rtmp.livepeer.com/live"
+                value="rtmp://rtmp.livepeer.studio/live"
               />
               <CopyInput
                 label="Playback URL"
-                value={`https://cdn.livepeer.com/hls/${createStream.data.playbackId}/index.m3u8`}
+                value={`https://cdn.livepeer.studio/hls/${createStream.data.playbackId}/index.m3u8`}
               />
             </Div>
           </Div>
