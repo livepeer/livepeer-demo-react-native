@@ -157,7 +157,7 @@ export function BroadcastStream() {
               />
               <CopyInput
                 label="Playback URL"
-                value={`https://cdn.livepeer.studio/hls/${createStream.data.playbackId}/index.m3u8`}
+                value={`https://livepeercdn.com/hls/${createStream.data.playbackId}/index.m3u8`}
               />
             </Div>
           </Div>
