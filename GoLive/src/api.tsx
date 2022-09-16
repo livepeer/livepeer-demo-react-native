@@ -57,23 +57,11 @@ export interface Stream {
   outgoingRate: number;
 }
 
-export interface FetchAPITokenOptions {
-  id: string;
-}
-export const fetchAPIToken = async (options: FetchAPITokenOptions) => {
-  const res = await fetch(`https://livepeer.com/api/api-token/${options.id}`, {
-    method: 'GET',
-    headers: {Authorization: `Bearer ${options.id}`},
-  });
-  if (!res.ok) throw new Error(res.status + ' Could not fetch api token');
-  return (await res.json()) as APIToken;
-};
-
 export interface FetchUserOptions {
   id: string;
 }
 export const fetchUser = async (apiKey: string, options: FetchUserOptions) => {
-  const res = await fetch(`https://livepeer.com/api/user/${options.id}`, {
+  const res = await fetch(`https://livepeer.studio/api/user/${options.id}`, {
     method: 'GET',
     headers: {Authorization: `Bearer ${apiKey}`},
   });
@@ -105,7 +93,7 @@ export const fetchStreams = async (
   }
   let query = params.join('&');
   if (query.length) query = '?' + query;
-  const res = await fetch(`https://livepeer.com/api/stream/${query}`, {
+  const res = await fetch(`https://livepeer.studio/api/stream/${query}`, {
     method: 'GET',
     headers: {Authorization: `Bearer ${apiKey}`},
   });
@@ -123,7 +111,7 @@ export const createStream = async (
   apiKey: string,
   options: CreateStreamOptions,
 ) => {
-  const res = await fetch(`https://livepeer.com/api/stream/`, {
+  const res = await fetch(`https://livepeer.studio/api/stream/`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${apiKey}`,
@@ -142,7 +130,7 @@ export const deleteStream = async (
   apiKey: string,
   options: DeleteStreamOptions,
 ) => {
-  const res = await fetch(`https://livepeer.com/api/stream/${options.id}`, {
+  const res = await fetch(`https://livepeer.studio/api/stream/${options.id}`, {
     method: 'DELETE',
     headers: {Authorization: `Bearer ${apiKey}`},
     body: JSON.stringify(options),

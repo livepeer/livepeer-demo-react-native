@@ -9,9 +9,15 @@ This is a demo React Native live streaming application built with the [Livepeer 
 ## Installation
 
 ```sh
+cd GoLive
+
+# Install node dependencies
 yarn
+
+# Install iOS dependencies
 cd ios && pod install && cd ..
 ```
+
 
 ## Development
 
